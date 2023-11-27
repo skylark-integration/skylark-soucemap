@@ -5,5 +5,5 @@
  * @link www.skylarkjs.org
  * @license MIT
  */
-define(["./base64"],function(e){"use strict";return exports.encode=function(r){var o,n="",d=function(e){return e<0?1+(-e<<1):0+(e<<1)}(r);do{o=31&d,(d>>>=5)>0&&(o|=32),n+=e.encode(o)}while(d>0);return n},exports.decode=function(r,o,n){var d,t,c,i,a=r.length,u=0,s=0;do{if(o>=a)throw new Error("Expected more digits in base 64 VLQ value.");if(-1===(t=e.decode(r.charCodeAt(o++))))throw new Error("Invalid base64 digit: "+r.charAt(o-1));d=!!(32&t),u+=(t&=31)<<s,s+=5}while(d);n.value=(i=(c=u)>>1,1==(1&c)?-i:i),n.rest=o},{encode:encode,decode:decode}});
+define(["./base64"],function(e){"use strict";return{encode:function(r){var n,t="",i=function(e){return e<0?1+(-e<<1):0+(e<<1)}(r);do{n=31&i,(i>>>=5)>0&&(n|=32),t+=e.encode(n)}while(i>0);return t},decode:function(r,n,t){var i,o,d,c,a=r.length,u=0,f=0;do{if(n>=a)throw new Error("Expected more digits in base 64 VLQ value.");if(-1===(o=e.decode(r.charCodeAt(n++))))throw new Error("Invalid base64 digit: "+r.charAt(n-1));i=!!(32&o),u+=(o&=31)<<f,f+=5}while(i);t.value=(c=(d=u)>>1,1==(1&d)?-c:c),t.rest=n}}});
 //# sourceMappingURL=sourcemaps/base64-vlq.js.map

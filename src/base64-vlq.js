@@ -12,7 +12,7 @@ define(['./base64'], function (base64) {
         var shifted = aValue >> 1;
         return isNegative ? -shifted : shifted;
     }
-    exports.encode = function base64VLQ_encode(aValue) {
+    var encode = function base64VLQ_encode(aValue) {
         var encoded = '';
         var digit;
         var vlq = toVLQSigned(aValue);
@@ -26,7 +26,7 @@ define(['./base64'], function (base64) {
         } while (vlq > 0);
         return encoded;
     };
-    exports.decode = function base64VLQ_decode(aStr, aIndex, aOutParam) {
+    var decode = function base64VLQ_decode(aStr, aIndex, aOutParam) {
         var strLen = aStr.length;
         var result = 0;
         var shift = 0;

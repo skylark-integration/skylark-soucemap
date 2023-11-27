@@ -515,7 +515,7 @@ define('skylark-sourcemap/base64-vlq',['./base64'], function (base64) {
         var shifted = aValue >> 1;
         return isNegative ? -shifted : shifted;
     }
-    exports.encode = function base64VLQ_encode(aValue) {
+    var encode = function base64VLQ_encode(aValue) {
         var encoded = '';
         var digit;
         var vlq = toVLQSigned(aValue);
@@ -529,7 +529,7 @@ define('skylark-sourcemap/base64-vlq',['./base64'], function (base64) {
         } while (vlq > 0);
         return encoded;
     };
-    exports.decode = function base64VLQ_decode(aStr, aIndex, aOutParam) {
+    var decode = function base64VLQ_decode(aStr, aIndex, aOutParam) {
         var strLen = aStr.length;
         var result = 0;
         var shift = 0;
@@ -1555,8 +1555,6 @@ define('skylark-sourcemap/source-node',[
     './util'
 ], function (SourceMapGenerator, util) {
     'use strict';
-
-    var util = __module__1;
     var REGEX_NEWLINE = /(\r?\n)/;
     var NEWLINE_CODE = 10;
     var isSourceNode = '$$$isSourceNode$$$';

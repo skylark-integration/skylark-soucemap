@@ -3,8 +3,6 @@ define([
     './util'
 ], function (SourceMapGenerator, util) {
     'use strict';
-
-    var util = __module__1;
     var REGEX_NEWLINE = /(\r?\n)/;
     var NEWLINE_CODE = 10;
     var isSourceNode = '$$$isSourceNode$$$';
