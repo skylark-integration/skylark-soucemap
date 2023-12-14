@@ -2,7 +2,6 @@
   "name": "skylark-sourcemap",
   "version": "0.9.0",
   "description": "A version of sourcemap that ported to running on skylarkjs.",
-  "main": "-",
   "scripts": {
     "build": "slib build .",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -32,6 +31,10 @@
     "src/",
     "skins/"
   ],
+  "exports": {
+    ".": "./dist/uncompressed/skylark-sourcemap/main.js",
+    "./*": "./dist/uncompressed/skylark-sourcemap/*.js"
+  },
   "skylarkjs": {
     "directories": {
       "dependencies": "./node_modules"
